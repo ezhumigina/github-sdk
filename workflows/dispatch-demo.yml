@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'The git reference for workflow'
+        required: true
+
+jobs:
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+           echo "Ref: ${{ github.event.inputs.ref }}"
